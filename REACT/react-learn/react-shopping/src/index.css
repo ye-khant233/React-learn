@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+/* Hide scrollbar for Chrome, Safari, Edge */
+.category-button-group::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for Firefox */
+  .category-button-group {
+    scrollbar-width: none; /* Hides scrollbar but allows scrolling */
+  }
+  
+  /* Optional: Ensure overflow for scrolling */
+  .category-button-group {
+    overflow: auto; /* Enables scrolling without scrollbar */
+  }
+  
+  

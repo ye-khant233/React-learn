@@ -1,6 +1,9 @@
 import Footer from "./components/footer";
 import Header from "./components/Header";
 import CategorySection from './components/CategorySection';
+import ProductSection from "./components/ProductSection";
+
+
 
 export default function App() {
   const title = "Product Categories";
@@ -14,6 +17,7 @@ export default function App() {
     <>
       <Header />
       <CategorySection />
+      <ProductSection/>
       <Footer />
     </>
   );
