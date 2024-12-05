@@ -4,23 +4,35 @@ import AboutUs from "../pages/AboutUs";
 import MyCart from "../pages/MyCart";
 import ProductDetail from "../pages/ProductDetail";
 import { createBrowserRouter } from "react-router";
+import MainLayout from "../components/MainLayout";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
+
     {
         path: "/",
-        element: <Home />
+        element: <MainLayout />,
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: "/",
+                element: <Home />
+            },
+            {
+                path: "about-us",
+                element: <AboutUs />
+            },
+            {
+                path: "my-cart",
+                element: <MyCart/>
+            },
+            {
+                path: "product-detail/:productId",
+                element: <ProductDetail />
+            },
+        
+        ],
     },
-    {
-        path: "/about-us",
-        element: <AboutUs />
-    },
-    {
-        path: "/my-cart",
-        element: <MyCart/>
-    },
-    {
-        path: "/about-us",
-        element: <ProductDetail />
-    },
+
 ]);
 export default router;

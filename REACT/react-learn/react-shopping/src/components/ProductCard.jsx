@@ -1,27 +1,33 @@
 import React from "react";
 import Rating from "./Rating";
 import Container from "./Container";
-
+import { Link } from "react-router";
 
 const ProductCard = ({
   product: {
+    id,
     title,
     price,
     image,
+    description,
     rating: { rate },
   },
 }) => {
   return (
-    <div className="border border-black p-5 flex flex-col items-start gap-5">
-    <img src={image}  className="h-48" alt=""/>
-    <p className='font-bold line-clamp-2'>{title}</p>
-    <Rating rate={rate} />
-    <div className="flex justify-between items-center w-full mt-auto">
-    <p>{price}</p>
-    <button className=" text-sm border border-black px-3 py-1">Add cart</button>
-
-    </div>
-  </div>
+    <Link
+      to={`/product-detail/${id}`}
+      className="border border-black p-5 flex flex-col items-start gap-5"
+    >
+      <img src={image} className="h-48" alt="" />
+      <p className="font-bold line-clamp-2">{title}</p>
+      <Rating rate={rate} />
+      <div className="flex justify-between items-center w-full mt-auto">
+        <p>{price}</p>
+        <button className=" text-sm border border-black px-3 py-1">
+          Add cart
+        </button>
+      </div>
+    </Link>
   );
 };
 
