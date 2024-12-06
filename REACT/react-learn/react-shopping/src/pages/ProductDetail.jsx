@@ -3,7 +3,7 @@ import React from 'react'
 import products from './../data/products';
 import Container from './../components/Container';
 import Rating from './../components/Rating';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import BreadCrumb from './../components/BreadCrumb';
 
   

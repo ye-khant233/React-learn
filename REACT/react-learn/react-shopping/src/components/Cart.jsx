@@ -20,6 +20,7 @@ const Cart = ({ cart }) => {
       </div>
       <div className="col-span-1">
         <p className="text-end text-2xl font-bold mt-3">{cart.cost}</p>
+        
       </div>
     </div>
   );

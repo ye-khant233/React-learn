@@ -1,29 +1,43 @@
 import React from 'react'
 import products from '../data/products'
 import Cart from './Cart'
+import Container from './Container'
+import { Link } from 'react-router-dom';
+import carts from '../data/carts';
 
 const CartSection = () => {
-    const carts = [{
-        id:1,
-        product:products[1],
-        quantity :3,
-        cost :66.9
-    },
-    {
-        id:2,
-        product:products[6],
-        quantity :1,
-        cost :99.9,
-    },
+  
 
 
-    ]
+    
   return (
    <>
-   <div className="flex flex-col gap-5">
+   <div className="flex flex-col gap-5 h-full">
    {
     carts.map((cart) => <Cart key={cart.id} cart={cart} />)
    }
+   <div className="absolute bottom-10 left-0 w-full bg-white ">
+    <Container>
+        <div className="border-t border-black flex justify-end gap-10 py-3">
+            <div className="">
+                <p className='text-gray-500'>Total</p>
+                <p className='font-bold'>123</p>
+            </div>
+            <div className="">
+            <p className='text-gray-500'>Total</p>
+            <p className='font-bold'>123</p>
+            </div>
+            <div className="">
+            <p className='text-gray-500'>Total</p>
+            <p className='text-2xl font-bold'>123</p>
+            </div>
+        </div>
+        <div className='text-end mb-3'>
+            <Link className='border border-black px-4 py-2'>Order Now</Link>
+            
+        </div>
+    </Container>
+   </div>
    </div>
    </>
   )
